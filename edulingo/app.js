@@ -12,6 +12,9 @@ const couponRoutes = require("./routes/couponRoutes");
 const quizRoutes = require('./routes/quizRoutes');
 const certificateRoutes = require('./routes/certificateRoutes');
 const courseRoutes = require("./routes/courseRoutes");
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const path = require('path');
 
 const app = express();
 
@@ -40,6 +43,14 @@ app.use('/api/quizzes', quizRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/feedbacks", feedbackRoutes);
+
+// Serve Swagger UI
+try {
+  const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
+  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+} catch (err) {
+  console.error('Failed to load swagger.yaml for docs:', err.message);
+}
 
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
