@@ -1,0 +1,28 @@
+* Question 1:
+  - Request: 
+	Method: GET
+	URL: http://localhost:9999/api/showtimes/60c72b2f9b1e8a1b4c8a2234
+
+* Question 2:
+  - Request: 
+	Method: GET
+	URL: http://localhost:9999/api/tickets/60c72b2f9b1e8a1b4c8a1235
+
+* Question 3:
+  - Request: 
+	Method: GET
+	URL: http://localhost:9999/api/theaters
+
+* Question 4:
+  - Request:
+	Method: POST
+	URL: http://localhost:9999/api/tickets
+	Request body:
+	{
+  		"userId": "60c72b2f9b1e8a1b4c8a1234",
+  		"showtimeId": "60c72b2f9b1e8a1b4c8a4236",
+  		"seats": [
+    			{ "seatNumber": "D2", "type": "adult", "price":1000 ,"discount": 0 },
+    			{ "seatNumber": "D1", "type": "child", "price":800 ,"discount": 2 }
+  		]
+	}

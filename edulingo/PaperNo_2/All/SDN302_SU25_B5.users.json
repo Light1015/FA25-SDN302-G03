@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "60c72b2f9b1e8a1b4c8a1234"
+  },
+  "email": "user1@example.com",
+  "password": "$2b$10$nsGyfxe3MdYrskjWxJQUae742.fcSPHLhydY2hijZRqW2a4OJMGEO",
+  "username": "john_doe",
+  "profile": {
+    "fullName": "John Doe",
+    "contact": {
+      "phone": "0901234567",
+      "address": {
+        "street": "123 Nguyen Hue",
+        "city": "Ho Chi Minh"
+      }
+    }
+  },
+  "createdAt": {
+    "$date": "2025-08-01T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-01T10:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "60c72b2f9b1e8a1b4c8a1235"
+  },
+  "email": "user2@example.com",
+  "password": "$2b$10$.jGNujnon6hfHaQ8JbsKI..7Ugwh5ej95ELQsCu5Iwm9JhzO2VtLC",
+  "username": "jane_smith",
+  "profile": {
+    "fullName": "Jane Smith",
+    "contact": {
+      "phone": "0912345678",
+      "address": {
+        "street": "456 Le Loi",
+        "city": "Hanoi"
+      }
+    }
+  },
+  "createdAt": {
+    "$date": "2025-08-02T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-02T12:00:00.000Z"
+  },
+  "__v": 0
+}]
