@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "69105bd9b1995fd0860b1f8e"
+  },
+  "full_name": "Phương Nguyễn",
+  "email": "phuong.teacher@example.com",
+  "password": "teacher123",
+  "role": "teacher",
+  "gender": "female",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "69105bd9b1995fd0860b1f8f"
+  },
+  "full_name": "Trâm Lê",
+  "email": "tram.learner@example.com",
+  "password": "learner123",
+  "role": "learner",
+  "gender": "female",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "69105bd9b1995fd0860b1f90"
+  },
+  "full_name": "Minh Huy",
+  "email": "minh.admin@example.com",
+  "password": "admin456",
+  "role": "admin",
+  "gender": "male",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "69105fca888e0a032e5bac18"
+  },
+  "full_name": "Nguyễn Văn A",
+  "email": "nguyenvana@example.com",
+  "password": "$2b$12$0U9i3adfpWYGLKesEckCSeIIFHsQYwSvAuzqiJ8WR5TTdMFF5A0W6",
+  "role": "teacher",
+  "gender": "male",
+  "status": "active",
+  "createdAt": {
+    "$date": "2025-11-09T09:32:58.884Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-09T09:34:00.240Z"
+  },
+  "password_hash": "$2b$12$0U9i3adfpWYGLKesEckCSeIIFHsQYwSvAuzqiJ8WR5TTdMFF5A0W6",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69105bd9b1995fd0860b1f8d"
+  },
+  "full_name": "Trần Văn Qui",
+  "email": "admin@example.com",
+  "password": "$2a$12$zwNHlkhhk0QmgpRRhq05kOT4Ed0bIt7AF8RJN4TQuBEPeXW0eMdRy",
+  "role": "admin",
+  "gender": "male",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "69105c50b1995fd0860b1f8e"
+  },
+  "full_name": "Teacher User",
+  "email": "teacher@gmail.com",
+  "password": "$2a$12$zwNHlkhhk0QmgpRRhq05kOT4Ed0bIt7AF8RJN4TQuBEPeXW0eMdRy",
+  "role": "teacher",
+  "gender": "female",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "69105c88b1995fd0860b1f8f"
+  },
+  "full_name": "Learner User",
+  "email": "learner@gmail.com",
+  "password": "$2a$12$zwNHlkhhk0QmgpRRhq05kOT4Ed0bIt7AF8RJN4TQuBEPeXW0eMdRy",
+  "role": "learner",
+  "gender": "male",
+  "status": "active"
+}]
