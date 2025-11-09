@@ -7,6 +7,7 @@ dotenv.config();
 
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
+const certificateRoutes = require('./routes/certificateRoutes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ mongoose.connect(mongoUri)
 // Dinh nghia cac route cho REST API
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/certificates', certificateRoutes);
 
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
