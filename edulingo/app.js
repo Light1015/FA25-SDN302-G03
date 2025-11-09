@@ -5,8 +5,9 @@ const cors = require("cors");
 
 dotenv.config();
 
-const userRoutes = require('./routes/userRoutes');
-const authRoutes = require('./routes/authRoutes');
+const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
+const feedbackRoutes = require("./routes/feedbackRoutes");
 const couponRoutes = require("./routes/couponRoutes");
 const quizRoutes = require('./routes/quizRoutes');
 const certificateRoutes = require('./routes/certificateRoutes');
@@ -38,8 +39,10 @@ app.use("/api/coupons", couponRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use("/api/courses", courseRoutes);
+app.use("/api/feedbacks", feedbackRoutes);
 
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
+
 });
