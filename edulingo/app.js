@@ -7,7 +7,7 @@ dotenv.config();
 
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
-
+const couponRoutes = require("./routes/couponRoutes");
 const app = express();
 
 // Cau hinh middleware co ban
@@ -28,7 +28,7 @@ mongoose.connect(mongoUri)
 // Dinh nghia cac route cho REST API
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
-
+app.use("/api/coupons", couponRoutes);
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
