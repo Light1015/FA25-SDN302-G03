@@ -9,8 +9,8 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).json({ 
-      message: 'Email and password are required' 
+    return res.status(400).json({
+      message: 'Email and password are required'
     });
   }
 
@@ -19,8 +19,8 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ email: email.toLowerCase() });
 
     if (!user) {
-      return res.status(401).json({ 
-        message: 'Invalid credentials' 
+      return res.status(401).json({
+        message: 'Invalid credentials'
       });
     }
 
@@ -28,15 +28,15 @@ router.post('/login', async (req, res) => {
     const isMatch = await user.isPasswordMatch(password);
 
     if (!isMatch) {
-      return res.status(401).json({ 
-        message: 'Invalid credentials' 
+      return res.status(401).json({
+        message: 'Invalid credentials'
       });
     }
 
     // Kiem tra trang thai user
     if (user.status !== 'active') {
-      return res.status(403).json({ 
-        message: 'Account is not active' 
+      return res.status(403).json({
+        message: 'Account is not active'
       });
     }
 
@@ -44,18 +44,18 @@ router.post('/login', async (req, res) => {
     // Kiem tra JWT_SECRET trong environment variable
     if (!process.env.JWT_SECRET) {
       console.error('JWT_SECRET is not defined in environment variables');
-      return res.status(500).json({ 
-        message: 'Server configuration error' 
+      return res.status(500).json({
+        message: 'Server configuration error'
       });
     }
 
     const token = jwt.sign(
-      { 
+      {
         id: user._id.toString(),
         email: user.email,
-        role: user.role 
-      }, 
-      process.env.JWT_SECRET, 
+        role: user.role
+      },
+      process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
@@ -67,11 +67,20 @@ router.post('/login', async (req, res) => {
     });
   } catch (error) {
     console.error('Login error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       message: 'Failed to login',
-      error: error.message 
+      error: error.message
     });
   }
+});
+
+
+// POST /users/logout
+router.post('/logout', (req, res) => {
+  // Xóa token khỏi client (ví dụ: xóa cookie hoặc localStorage)
+  res.json({
+    message: 'Đã logout thành công'
+  });
 });
 
 module.exports = router;
