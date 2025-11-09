@@ -1,0 +1,70 @@
+[
+  {
+    "_id": {
+      "$oid": "69205bd9b1995fd0860b1f9a" 
+    },
+    "userId": {
+      "$oid": "69105bd9b1995fd0860b1f8f" 
+    }, 
+    "content": "Giao diện người dùng rất trực quan và dễ sử dụng.",
+    "rating": 5,
+    "status": "active",
+    "createdAt": {
+      "$date": "2025-11-08T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-08T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "69205bd9b1995fd0860b1f9b" 
+    },
+    "userId": {
+      "$oid": "69105fca888e0a032e5bac18" 
+    }, 
+    "content": "Tôi gặp một lỗi nhỏ khi tải lên tài liệu.",
+    "rating": 3,
+    "status": "active",
+    "createdAt": {
+      "$date": "2025-11-08T10:15:30.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-08T10:15:30.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "69205bd9b1995fd0860b1f9c" 
+    },
+    "userId": {
+      "$oid": "69105bd9b1995fd0860b1f8d" 
+    }, 
+    "content": "Chất lượng khóa học rất đáng giá so với chi phí.",
+    "rating": 4,
+    "status": "active",
+    "createdAt": {
+      "$date": "2025-11-08T11:20:45.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-08T11:20:45.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "69205bd9b1995fd0860b1f9d" 
+    },
+    "userId": {
+      "$oid": "69105bd9b1995fd0860b1f8e" 
+    }, 
+    "content": "Phản hồi chậm từ bộ phận hỗ trợ.",
+    "rating": 2,
+    "status": "hidden", 
+    "createdAt": {
+      "$date": "2025-11-08T12:05:10.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-08T12:05:10.000Z"
+    }
+  }
+]

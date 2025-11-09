@@ -1,0 +1,98 @@
+[{
+  "title": "Certificate of Completion - NodeJS (Updated)",
+  "description": "Cập nhật: bao gồm phần test",
+  "recipient": {
+    "$oid": "650f1a3e8b9f4b2c1a2d3e4f"
+  },
+  "issued_by": {
+    "$oid": "69105bd9b1995fd0860b1f8d"
+  },
+  "issue_date": {
+    "$date": "2025-11-01T00:00:00.000Z"
+  },
+  "expiry_date": {
+    "$date": "2027-11-01T00:00:00.000Z"
+  },
+  "credential_id": "CERT-NODE-2025-0001",
+  "status": "active",
+  "createdAt": {
+    "$date": "2025-11-09T13:54:25.680Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-09T13:55:44.647Z"
+  },
+  "__v": 0
+},
+{
+  "title": "Advanced React Patterns",
+  "description": "Chứng nhận hoàn thành khóa học nâng cao về React.",
+  "recipient": {
+    "$oid": "651a2b8e9c0d5e3d2b3e5f0a"
+  },
+  "issued_by": {
+    "$oid": "69105bd9b1995fd0860b1f8d"
+  },
+  "issue_date": {
+    "$date": "2025-10-15T00:00:00.000Z"
+  },
+  "expiry_date": null,
+  "credential_id": "CERT-REACT-2025-0001",
+  "status": "active",
+  "createdAt": {
+    "$date": "2025-11-09T13:59:05.870Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-09T13:59:05.870Z"
+  },
+  "__v": 0
+},
+{
+  "title": "Python for Data Science",
+  "description": "Đã hoàn thành khóa học Python cho Khoa học dữ liệu.",
+  "recipient": {
+    "$oid": "652b3c9f0d1e6f4e3c4f6a1b"
+  },
+  "issued_by": {
+    "$oid": "69105bd9b1995fd0860b1f8d"
+  },
+  "issue_date": {
+    "$date": "2025-09-05T00:00:00.000Z"
+  },
+  "expiry_date": {
+    "$date": "2027-09-05T00:00:00.000Z"
+  },
+  "credential_id": "CERT-PY-2025-0002",
+  "status": "active",
+  "createdAt": {
+    "$date": "2025-11-09T13:59:19.041Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-09T13:59:19.041Z"
+  },
+  "__v": 0
+},
+{
+  "title": "Cloud Computing Basics (AWS)",
+  "description": "Hoàn thành khóa học cơ bản về Điện toán đám mây với AWS.",
+  "recipient": {
+    "$oid": "654d5e1b2f3a8b6a5e6b8c3d"
+  },
+  "issued_by": {
+    "$oid": "69105bd9b1995fd0860b1f8d"
+  },
+  "issue_date": {
+    "$date": "2025-11-05T00:00:00.000Z"
+  },
+  "expiry_date": {
+    "$date": "2026-11-05T00:00:00.000Z"
+  },
+  "credential_id": "CERT-AWS-2025-0001",
+  "status": "active",
+  "createdAt": {
+    "$date": "2025-11-09T13:59:42.450Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-09T13:59:42.450Z"
+  },
+  "__v": 0
+}]
