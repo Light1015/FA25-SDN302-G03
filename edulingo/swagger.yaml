@@ -1,0 +1,807 @@
+openapi: 3.0.0
+info:
+  title: Edulingo API
+  version: 1.0.0
+  description: |
+    Edulingo backend API documentation (users, auth, courses, quizzes, coupons, certificates, feedbacks).
+  contact:
+    name: Project Team
+    email: team@edulingo.local
+servers:
+  - url: http://localhost:9999
+    description: Local development server (default port from app.js)
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        full_name:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [admin, teacher, learner]
+        gender:
+          type: string
+          enum: [male, female, other]
+        status:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    AuthResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        role:
+          type: string
+        token:
+          type: string
+
+    UserProfileUpdate:
+      type: object
+      properties:
+        full_name:
+          type: string
+        gender:
+          type: string
+          enum: [male, female, other]
+        current_password:
+          type: string
+        new_password:
+          type: string
+
+    Course:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        teacher_id:
+          type: string
+        teacher_name:
+          type: string
+        category:
+          type: string
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced]
+        duration:
+          type: number
+        price:
+          type: number
+        status:
+          type: string
+
+    CourseCreate:
+      type: object
+      required: [title]
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced]
+        duration:
+          type: number
+        price:
+          type: number
+        thumbnail:
+          type: string
+        status:
+          type: string
+
+    Coupon:
+      type: object
+      properties:
+        _id:
+          type: string
+        code:
+          type: string
+        discountPercent:
+          type: number
+        expiryDate:
+          type: string
+          format: date-time
+        isActive:
+          type: boolean
+
+    CouponCreate:
+      type: object
+      required: [code, discountPercent, expiryDate]
+      properties:
+        code:
+          type: string
+        discountPercent:
+          type: number
+        expiryDate:
+          type: string
+          format: date-time
+
+    QuizQuestion:
+      type: object
+      properties:
+        questionText:
+          type: string
+        options:
+          type: object
+          properties:
+            A:
+              type: string
+            B:
+              type: string
+            C:
+              type: string
+            D:
+              type: string
+        correctAnswer:
+          type: string
+          enum: [A, B, C, D]
+
+    Quiz:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/QuizQuestion"
+
+    Certificate:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        recipient:
+          type: string
+        issued_by:
+          type: string
+        issue_date:
+          type: string
+          format: date-time
+        expiry_date:
+          type: string
+          format: date-time
+
+    Feedback:
+      type: object
+      properties:
+        _id:
+          type: string
+        userId:
+          type: string
+        content:
+          type: string
+        rating:
+          type: number
+
+    UserRegister:
+      type: object
+      required:
+        - full_name
+        - email
+        - password
+      properties:
+        full_name:
+          type: string
+          example: "Nguyen Van A"
+        email:
+          type: string
+          format: email
+          example: "a@example.com"
+        password:
+          type: string
+          format: password
+          example: "secret123"
+        name:
+          type: string
+          example: "nguyena"
+        gender:
+          type: string
+          enum: [male, female, other]
+          example: male
+
+    UserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        full_name:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+
+paths:
+  /api/auth/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+
+  /api/auth/logout:
+    post:
+      summary: Logout (client should remove token)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Logged out
+
+  /api/auth/register:
+    post:
+      summary: Register new user
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserRegister"
+      responses:
+        "201":
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Đăng ký thành công"
+                  role:
+                    type: string
+                    example: "learner"
+                  user:
+                    $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: Validation error or missing fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  error:
+                    type: string
+        "409":
+          description: Email already in use
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Email already in use"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  error:
+                    type: string
+
+  /api/users/profile:
+    get:
+      summary: Get own profile
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+  /api/users/profile/update:
+    put:
+      summary: Update own profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserProfileUpdate"
+      responses:
+        "200":
+          description: Updated profile
+
+  /api/users:
+    get:
+      summary: Get all users (Admin only)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of users
+
+  /api/users/create:
+    post:
+      summary: Create user (Admin only)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      responses:
+        "201":
+          description: User created
+
+  /api/users/{id}:
+    get:
+      summary: Get user by ID (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: User detail
+
+    put:
+      summary: Update user (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated user
+
+    delete:
+      summary: Delete user (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted
+
+  /api/courses/catalog:
+    get:
+      summary: Public course catalog
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: level
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Catalog
+
+  /api/courses/catalog/{id}:
+    get:
+      summary: Public course detail by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Course detail
+
+  /api/courses:
+    get:
+      summary: Teacher/Admin list courses
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Courses
+
+    post:
+      summary: Create course (Teacher/Admin)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CourseCreate"
+      responses:
+        "201":
+          description: Course created
+
+  /api/courses/{id}:
+    get:
+      summary: Get course by id (Teacher/Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Course
+
+    put:
+      summary: Update course (Teacher/Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CourseCreate"
+      responses:
+        "200":
+          description: Updated
+
+    delete:
+      summary: Delete course (Teacher/Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted
+
+  /api/coupons:
+    post:
+      summary: Create coupon (Admin only)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CouponCreate"
+      responses:
+        "201":
+          description: Coupon created
+
+    get:
+      summary: Get all coupons (Admin only)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Coupons
+
+  /api/coupons/{id}:
+    get:
+      summary: Get coupon by id (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Coupon
+
+    put:
+      summary: Update coupon (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CouponCreate"
+      responses:
+        "200":
+          description: Updated coupon
+
+    delete:
+      summary: Delete coupon (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted coupon
+
+  /api/quizzes:
+    get:
+      summary: Get quizzes (public)
+      responses:
+        "200":
+          description: Quiz list
+
+    post:
+      summary: Create quiz (Admin only)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Quiz"
+      responses:
+        "201":
+          description: Quiz created
+
+  /api/quizzes/{id}:
+    get:
+      summary: Get quiz by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Quiz
+
+    put:
+      summary: Update quiz (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Quiz"
+      responses:
+        "200":
+          description: Updated quiz
+
+    delete:
+      summary: Delete quiz (Admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted quiz
+
+  /api/certificates:
+    get:
+      summary: Get all certificates (Admin)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Certificates
+
+    post:
+      summary: Create certificate (Admin)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Certificate"
+      responses:
+        "201":
+          description: Created certificate
+
+  /api/certificates/{id}:
+    get:
+      summary: Get certificate by id (Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Certificate
+
+    put:
+      summary: Update certificate (Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Certificate"
+      responses:
+        "200":
+          description: Updated
+
+    delete:
+      summary: Delete certificate (Admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted certificate
+
+  /api/feedbacks/create:
+    post:
+      summary: Create feedback (authenticated)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                rating:
+                  type: number
+      responses:
+        "201":
+          description: Feedback created
+
+  /api/feedbacks/my-feedbacks:
+    get:
+      summary: Get own feedbacks
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Feedback list
+
+  /api/feedbacks/{id}:
+    put:
+      summary: Update feedback (owner)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated feedback
+
+    delete:
+      summary: Delete feedback (owner - soft delete)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Deleted (hidden)
