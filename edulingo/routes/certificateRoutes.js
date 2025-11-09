@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const Certificate = require('../models/Certificate');
 const User = require('../models/User');
 const authMiddleware = require('../middleware/authMiddleware');
+const adminMiddleware = require('../middleware/adminMiddleware');
 
 const router = express.Router();
 
 // GET /certificates - Get all certificates (Public)
-router.get('/', authMiddleware, async (req, res) => {
+router.get('/', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const certificates = await Certificate.find();
         res.json(certificates);
@@ -17,7 +18,7 @@ router.get('/', authMiddleware, async (req, res) => {
 });
 
 // GET /certificates/:id - Get certificate by ID (Public)
-router.get('/:id', authMiddleware, async (req, res) => {
+router.get('/:id', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const cert = await Certificate.findById(req.params.id);
         if (!cert) return res.status(404).json({ message: 'Certificate not found' });
@@ -28,7 +29,7 @@ router.get('/:id', authMiddleware, async (req, res) => {
 });
 
 // POST /certificates - Create certificate (Auth required)
-router.post('/', authMiddleware, async (req, res) => {
+router.post('/', authMiddleware, adminMiddleware, async (req, res) => {
     console.log('📩 POST /certificates hit');
     console.log('🧠 Request body:', req.body);
     console.log('👤 Authenticated user:', req.user);
@@ -50,7 +51,7 @@ router.post('/', authMiddleware, async (req, res) => {
 });
 
 // PUT /certificates/:id - Update certificate (Auth required)
-router.put('/:id', authMiddleware, async (req, res) => {
+router.put('/:id', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const updated = await Certificate.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updated) return res.status(404).json({ message: 'Certificate not found' });
@@ -61,7 +62,7 @@ router.put('/:id', authMiddleware, async (req, res) => {
 });
 
 // DELETE /certificates/:id - Delete certificate (Auth required)
-router.delete('/:id', authMiddleware, async (req, res) => {
+router.delete('/:id', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const deleted = await Certificate.findByIdAndDelete(req.params.id);
         if (!deleted) return res.status(404).json({ message: 'Certificate not found' });
