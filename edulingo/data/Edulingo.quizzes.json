@@ -1,0 +1,870 @@
+[
+    {
+        "courseTitle": "Lập trình Javascript Căn bản",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "JS Basics - Operators & Variables",
+        "description": "Quiz về các toán tử, biến và kiểu dữ liệu trong Javascript.",
+        "questions": [
+            {
+                "questionText": "Which keyword declares a block-scoped variable in ES6?",
+                "options": {
+                    "A": "var",
+                    "B": "let",
+                    "C": "function",
+                    "D": "constable"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is the output of: typeof NaN?",
+                "options": {
+                    "A": "number",
+                    "B": "NaN",
+                    "C": "undefined",
+                    "D": "object"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which operator is used for strict equality?",
+                "options": {
+                    "A": "=",
+                    "B": "==",
+                    "C": "===",
+                    "D": "=!="
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "What is the result of 1 + '2' in JavaScript?",
+                "options": {
+                    "A": "3",
+                    "B": "12",
+                    "C": "NaN",
+                    "D": "TypeError"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which is NOT a primitive type in JS?",
+                "options": {
+                    "A": "string",
+                    "B": "number",
+                    "C": "object",
+                    "D": "boolean"
+                },
+                "correctAnswer": "C"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Thiết kế UI/UX với Figma",
+        "teacher_id": {
+            "$oid": "69105bd9b1995fd0860b1f8e"
+        },
+        "teacher_name": "Phương Nguyễn",
+        "title": "Figma - Foundations",
+        "description": "Câu hỏi cơ bản về công cụ Figma và nguyên tắc UI/UX.",
+        "questions": [
+            {
+                "questionText": "Which layout tool in Figma helps to distribute space evenly?",
+                "options": {
+                    "A": "Auto Layout",
+                    "B": "Pen Tool",
+                    "C": "Boolean",
+                    "D": "Prototype"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What does the term 'affordance' refer to in UI?",
+                "options": {
+                    "A": "Visual hint that indicates possible actions",
+                    "B": "Color contrast",
+                    "C": "Font pairing",
+                    "D": "Animation"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which is a good practice for mobile UI?",
+                "options": {
+                    "A": "Tiny touch targets",
+                    "B": "High information density",
+                    "C": "Large touch targets",
+                    "D": "Use of many modal dialogs"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which Figma feature allows interactive flows?",
+                "options": {
+                    "A": "Components",
+                    "B": "Prototype",
+                    "C": "Vector Networks",
+                    "D": "Slices"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is a wireframe?",
+                "options": {
+                    "A": "High-fidelity visual design",
+                    "B": "Interactive prototype",
+                    "C": "Blueprint-like low-fidelity layout",
+                    "D": "Final product"
+                },
+                "correctAnswer": "C"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Node.js Nâng cao và Xây dựng API",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "Node.js - Express & Middleware",
+        "description": "Quiz về middleware, routing và xử lý lỗi trong Express.",
+        "questions": [
+            {
+                "questionText": "Which function is used to define middleware in Express?",
+                "options": {
+                    "A": "app.route()",
+                    "B": "app.use()",
+                    "C": "app.listen()",
+                    "D": "app.get()"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which status code is typically used for 'Not Found'?",
+                "options": {
+                    "A": "200",
+                    "B": "400",
+                    "C": "404",
+                    "D": "500"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "How to parse JSON body in Express (v4+)?",
+                "options": {
+                    "A": "app.use(express.json())",
+                    "B": "app.use(bodyParser.raw())",
+                    "C": "app.use(express.text())",
+                    "D": "app.parseJSON()"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which module helps to create routes in separate files?",
+                "options": {
+                    "A": "express.Router()",
+                    "B": "fs",
+                    "C": "path",
+                    "D": "http"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What's the best practice for handling async errors in Express?",
+                "options": {
+                    "A": "Ignore them",
+                    "B": "Use try/catch and next(err)",
+                    "C": "Throw and let app crash",
+                    "D": "Use console.log only"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Nguyên lý Marketing Căn bản",
+        "teacher_id": {
+            "$oid": "69105bd9b1995fd0860b1f8e"
+        },
+        "teacher_name": "Phương Nguyễn",
+        "title": "Marketing Basics - 4P",
+        "description": "Các câu hỏi về 4P và chiến lược marketing cơ bản.",
+        "questions": [
+            {
+                "questionText": "Which of the following is NOT part of the 4P marketing mix?",
+                "options": {
+                    "A": "Product",
+                    "B": "Price",
+                    "C": "People",
+                    "D": "Place"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "What does 'Place' refer to in marketing?",
+                "options": {
+                    "A": "Where the product is sold",
+                    "B": "The product features",
+                    "C": "The product price",
+                    "D": "The advertising"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which strategy focuses on lowering prices to increase market share?",
+                "options": {
+                    "A": "Skimming",
+                    "B": "Penetration pricing",
+                    "C": "Premium pricing",
+                    "D": "Psychological pricing"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is 'target audience' in marketing?",
+                "options": {
+                    "A": "All people",
+                    "B": "Group most likely to buy",
+                    "C": "Competitors",
+                    "D": "Suppliers"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which metric measures the proportion of visitors who take a desired action?",
+                "options": {
+                    "A": "Bounce rate",
+                    "B": "Conversion rate",
+                    "C": "CTR",
+                    "D": "Impressions"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "draft"
+    },
+    {
+        "courseTitle": "Quản lý Dự án với Agile và Scrum",
+        "teacher_id": {
+            "$oid": "69105c50b1995fd0860b1f8e"
+        },
+        "teacher_name": "Teacher User",
+        "title": "Agile & Scrum Fundamentals",
+        "description": "Quiz on Scrum roles and ceremonies.",
+        "questions": [
+            {
+                "questionText": "Who is responsible for maximizing the value of the product?",
+                "options": {
+                    "A": "Scrum Master",
+                    "B": "Product Owner",
+                    "C": "Developer",
+                    "D": "Stakeholder"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which event is time-boxed to one month or less?",
+                "options": {
+                    "A": "Sprint",
+                    "B": "Daily Standup",
+                    "C": "Backlog Refinement",
+                    "D": "Sprint Review"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What is the purpose of a Sprint Retrospective?",
+                "options": {
+                    "A": "Plan the next sprint",
+                    "B": "Inspect and adapt the process",
+                    "C": "Demo the product",
+                    "D": "Estimate tasks"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Who facilitates Scrum events and removes impediments?",
+                "options": {
+                    "A": "Product Owner",
+                    "B": "Project Manager",
+                    "C": "Scrum Master",
+                    "D": "Stakeholder"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "What is a 'Sprint Backlog'?",
+                "options": {
+                    "A": "List of features for the product",
+                    "B": "List of tasks for the sprint",
+                    "C": "Project budget",
+                    "D": "Release plan"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "archived"
+    },
+    {
+        "courseTitle": "Python cho Khoa học Dữ liệu",
+        "teacher_id": {
+            "$oid": "69105c50b1995fd0860b1f8e"
+        },
+        "teacher_name": "Teacher User",
+        "title": "Python - Pandas Basics",
+        "description": "Quiz về thao tác dữ liệu sử dụng Pandas.",
+        "questions": [
+            {
+                "questionText": "Which function reads a CSV file into a DataFrame?",
+                "options": {
+                    "A": "pd.read_table()",
+                    "B": "pd.read_excel()",
+                    "C": "pd.read_csv()",
+                    "D": "pd.load_csv()"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which method returns the first n rows of a DataFrame?",
+                "options": {
+                    "A": "df.sample()",
+                    "B": "df.head()",
+                    "C": "df.tail()",
+                    "D": "df.take()"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which library provides numerical arrays in Python?",
+                "options": {
+                    "A": "pandas",
+                    "B": "matplotlib",
+                    "C": "numpy",
+                    "D": "scipy"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "How to drop missing values in a DataFrame?",
+                "options": {
+                    "A": "df.dropna()",
+                    "B": "df.fillna()",
+                    "C": "df.remove_null()",
+                    "D": "df.delete_na()"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which method gives summary statistics of numerical columns?",
+                "options": {
+                    "A": "df.info()",
+                    "B": "df.describe()",
+                    "C": "df.stats()",
+                    "D": "df.summary()"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Nhiếp ảnh Cơ bản cho Người mới",
+        "teacher_id": {
+            "$oid": "69105bd9b1995fd0860b1f8e"
+        },
+        "teacher_name": "Phương Nguyễn",
+        "title": "Photography Basics - Exposure",
+        "description": "Quiz về tam giác phơi sáng và bố cục.",
+        "questions": [
+            {
+                "questionText": "Which parameter controls the amount of light hitting the sensor?",
+                "options": {
+                    "A": "ISO",
+                    "B": "Shutter Speed",
+                    "C": "Aperture",
+                    "D": "All of the above"
+                },
+                "correctAnswer": "D"
+            },
+            {
+                "questionText": "Which element helps create depth in a photo composition?",
+                "options": {
+                    "A": "Foreground elements",
+                    "B": "Flat background",
+                    "C": "Overexposure",
+                    "D": "Low ISO"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What does a lower f-number (e.g., f/1.8) indicate?",
+                "options": {
+                    "A": "Smaller aperture",
+                    "B": "Larger aperture",
+                    "C": "Longer shutter",
+                    "D": "Lower ISO"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which ISO setting is best for low-light without tripod?",
+                "options": {
+                    "A": "100",
+                    "B": "200",
+                    "C": "1600",
+                    "D": "3200"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which shutter speed freezes fast motion?",
+                "options": {
+                    "A": "1/1000s",
+                    "B": "1s",
+                    "C": "1/2s",
+                    "D": "2s"
+                },
+                "correctAnswer": "A"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Giới thiệu về Điện toán Đám mây (Cloud)",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "Cloud Fundamentals",
+        "description": "Quiz on cloud service models and providers.",
+        "questions": [
+            {
+                "questionText": "Which is an example of IaaS?",
+                "options": {
+                    "A": "AWS EC2",
+                    "B": "Google Docs",
+                    "C": "Heroku PaaS",
+                    "D": "SaaS"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What does SaaS stand for?",
+                "options": {
+                    "A": "Software as a Service",
+                    "B": "Storage as a Service",
+                    "C": "System as a Service",
+                    "D": "Service and Software"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which provider is NOT a major cloud vendor?",
+                "options": {
+                    "A": "AWS",
+                    "B": "Azure",
+                    "C": "DigitalOcean",
+                    "D": "Microsoft"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which model is used to deploy containerized apps at scale?",
+                "options": {
+                    "A": "Virtual Machines",
+                    "B": "Kubernetes",
+                    "C": "FTP",
+                    "D": "SFTP"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which term describes pay-as-you-go resource usage?",
+                "options": {
+                    "A": "Subscription",
+                    "B": "On-premise",
+                    "C": "Pay-per-use",
+                    "D": "License"
+                },
+                "correctAnswer": "C"
+            }
+        ],
+        "status": "draft"
+    },
+    {
+        "courseTitle": "ReactJS - Hướng dẫn Toàn diện",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "ReactJS - Hooks & State",
+        "description": "Quiz about React hooks, state and lifecycle equivalents.",
+        "questions": [
+            {
+                "questionText": "Which hook is used to manage state in a functional component?",
+                "options": {
+                    "A": "useEffect",
+                    "B": "useState",
+                    "C": "useContext",
+                    "D": "useReducer"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which hook runs after every render by default?",
+                "options": {
+                    "A": "useMemo",
+                    "B": "useEffect",
+                    "C": "useCallback",
+                    "D": "useState"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What does lifting state up mean?",
+                "options": {
+                    "A": "Moving state to a parent to share between children",
+                    "B": "Putting all state in child components",
+                    "C": "Using Redux only",
+                    "D": "Avoiding props"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which is used for memoizing expensive calculations?",
+                "options": {
+                    "A": "useMemo",
+                    "B": "useState",
+                    "C": "useEffect",
+                    "D": "useRef"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "How to prevent unnecessary re-renders for callbacks?",
+                "options": {
+                    "A": "useCallback",
+                    "B": "useState",
+                    "C": "useLayoutEffect",
+                    "D": "useMemo"
+                },
+                "correctAnswer": "A"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Chiến lược Content Marketing",
+        "teacher_id": {
+            "$oid": "69105bd9b1995fd0860b1f8e"
+        },
+        "teacher_name": "Phương Nguyễn",
+        "title": "Content Marketing - SEO Basics",
+        "description": "Quiz about SEO fundamentals and content strategy.",
+        "questions": [
+            {
+                "questionText": "What does SEO stand for?",
+                "options": {
+                    "A": "Search Engine Optimization",
+                    "B": "Social Engagement Optimization",
+                    "C": "Search Engine Order",
+                    "D": "Systematic Engine Optimization"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which factor affects search ranking?",
+                "options": {
+                    "A": "Keyword stuffing",
+                    "B": "Mobile-friendliness",
+                    "C": "Hidden text",
+                    "D": "None of the above"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is a meta description?",
+                "options": {
+                    "A": "Visible heading",
+                    "B": "A brief summary shown in search results",
+                    "C": "A URL",
+                    "D": "A footer"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which metric measures how many users return to the site?",
+                "options": {
+                    "A": "CTR",
+                    "B": "Bounce rate",
+                    "C": "Returning visitor rate",
+                    "D": "Impressions"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "What is backlink?",
+                "options": {
+                    "A": "Internal link",
+                    "B": "External link from another site",
+                    "C": "Anchor text only",
+                    "D": "Site map"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Lập trình Javascript Căn bản",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "JS DOM & Events",
+        "description": "Quiz về DOM, selection và xử lý events trong JavaScript.",
+        "questions": [
+            {
+                "questionText": "Which method selects an element by id?",
+                "options": {
+                    "A": "getElementByClass",
+                    "B": "querySelectorAll",
+                    "C": "getElementById",
+                    "D": "select#id"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which event fires when the DOM is fully loaded?",
+                "options": {
+                    "A": "load",
+                    "B": "DOMContentLoaded",
+                    "C": "ready",
+                    "D": "init"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "How to add an event listener?",
+                "options": {
+                    "A": "elem.on('click', fn)",
+                    "B": "elem.addEventListener('click', fn)",
+                    "C": "add.listener(elem)",
+                    "D": "attachEvent"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which property changes the text content of an element?",
+                "options": {
+                    "A": "innerText",
+                    "B": "valueText",
+                    "C": "textContent",
+                    "D": "nodeValue"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "Which returns all elements matching a selector?",
+                "options": {
+                    "A": "querySelector",
+                    "B": "getElementById",
+                    "C": "getElementsByTagName",
+                    "D": "querySelectorAll"
+                },
+                "correctAnswer": "D"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Node.js Nâng cao và Xây dựng API",
+        "teacher_id": {
+            "$oid": "69105fca888e0a032e5bac18"
+        },
+        "teacher_name": "Nguyễn Văn A",
+        "title": "Node.js Security & Best Practices",
+        "description": "Quiz về bảo mật API, CORS và authentication.",
+        "questions": [
+            {
+                "questionText": "What does CORS stand for?",
+                "options": {
+                    "A": "Cross-Origin Resource Sharing",
+                    "B": "Cross-Object Resource Sharing",
+                    "C": "Client-Origin Resource Sharing",
+                    "D": "Cross-Origin Request Security"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which package helps hash passwords?",
+                "options": {
+                    "A": "crypto-js",
+                    "B": "bcrypt",
+                    "C": "express-hash",
+                    "D": "hashlib"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which header commonly contains the JWT?",
+                "options": {
+                    "A": "X-API-Key",
+                    "B": "Authorization",
+                    "C": "Cookie",
+                    "D": "X-JWT-Token"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is rate limiting used for?",
+                "options": {
+                    "A": "Improve latency",
+                    "B": "Prevent brute-force and abuse",
+                    "C": "Compress responses",
+                    "D": "Authenticate users"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which is a secure way to store secrets in production?",
+                "options": {
+                    "A": "In source code",
+                    "B": "Environment variables or secret manager",
+                    "C": "In public repo",
+                    "D": "In client-side code"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Thiết kế UI/UX với Figma",
+        "teacher_id": {
+            "$oid": "69105bd9b1995fd0860b1f8e"
+        },
+        "teacher_name": "Phương Nguyễn",
+        "title": "Design Principles - Color & Typography",
+        "description": "Quiz on color theory and typography basics for UI.",
+        "questions": [
+            {
+                "questionText": "Which color model is used for screens?",
+                "options": {
+                    "A": "CMYK",
+                    "B": "RGB",
+                    "C": "Pantone",
+                    "D": "HSL"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which is best for readable body text?",
+                "options": {
+                    "A": "Display fonts",
+                    "B": "Script fonts",
+                    "C": "Sans-serif with good x-height",
+                    "D": "All caps"
+                },
+                "correctAnswer": "C"
+            },
+            {
+                "questionText": "What does contrast ratio measure?",
+                "options": {
+                    "A": "Spacing between elements",
+                    "B": "Color difference for readability",
+                    "C": "Font size",
+                    "D": "Image resolution"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which is a web-safe font commonly used?",
+                "options": {
+                    "A": "Times New Roman",
+                    "B": "Comic Sans",
+                    "C": "Papyrus",
+                    "D": "Wingdings"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "What is leading in typography?",
+                "options": {
+                    "A": "Line-height",
+                    "B": "Letter spacing",
+                    "C": "Font weight",
+                    "D": "Font style"
+                },
+                "correctAnswer": "A"
+            }
+        ],
+        "status": "published"
+    },
+    {
+        "courseTitle": "Quản lý Dự án với Agile và Scrum",
+        "teacher_id": {
+            "$oid": "69105c50b1995fd0860b1f8e"
+        },
+        "teacher_name": "Teacher User",
+        "title": "Agile Planning & Estimation",
+        "description": "Quiz on estimation techniques and planning in Agile.",
+        "questions": [
+            {
+                "questionText": "Which estimation technique uses story points?",
+                "options": {
+                    "A": "T-shirt sizing",
+                    "B": "Planning Poker",
+                    "C": "Gantt chart",
+                    "D": "Waterfall estimate"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is velocity in Scrum?",
+                "options": {
+                    "A": "Team's delivery rate of story points per sprint",
+                    "B": "Sprint length",
+                    "C": "Number of developers",
+                    "D": "Project budget"
+                },
+                "correctAnswer": "A"
+            },
+            {
+                "questionText": "Which planning artifact contains user stories?",
+                "options": {
+                    "A": "Sprint Backlog",
+                    "B": "Product Backlog",
+                    "C": "Release Notes",
+                    "D": "Risk Register"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "What is the purpose of Planning Poker?",
+                "options": {
+                    "A": "Assign tasks",
+                    "B": "Estimate effort collaboratively",
+                    "C": "Create test cases",
+                    "D": "Schedule meetings"
+                },
+                "correctAnswer": "B"
+            },
+            {
+                "questionText": "Which unit is commonly used to estimate stories?",
+                "options": {
+                    "A": "Hours",
+                    "B": "Story points",
+                    "C": "Dollars",
+                    "D": "Lines of code"
+                },
+                "correctAnswer": "B"
+            }
+        ],
+        "status": "published"
+    }
+]

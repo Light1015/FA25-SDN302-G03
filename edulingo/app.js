@@ -7,6 +7,7 @@ dotenv.config();
 
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
+const quizRoutes = require('./routes/quizRoutes');
 const certificateRoutes = require('./routes/certificateRoutes');
 const courseRoutes = require("./routes/courseRoutes");
 
@@ -32,6 +33,7 @@ mongoose
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/quizzes', quizRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use("/api/courses", courseRoutes);
 
