@@ -5,8 +5,9 @@ const cors = require("cors");
 
 dotenv.config();
 
-const userRoutes = require("./routes/userRoutes");
-const authRoutes = require("./routes/authRoutes");
+const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+const certificateRoutes = require('./routes/certificateRoutes');
 const courseRoutes = require("./routes/courseRoutes");
 
 const app = express();
@@ -28,8 +29,10 @@ mongoose
   .catch((error) => console.error("MongoDB connection error:", error));
 
 // Dinh nghia cac route cho REST API
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
+
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/certificates', certificateRoutes);
 app.use("/api/courses", courseRoutes);
 
 const PORT = process.env.PORT || 9999;
