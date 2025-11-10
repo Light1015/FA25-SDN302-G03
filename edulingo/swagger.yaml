@@ -476,7 +476,7 @@ paths:
       responses:
         "200":
           description: Courses
-
+  /api/courses/create:
     post:
       summary: Create course (Teacher/Admin)
       security:
@@ -504,7 +504,7 @@ paths:
       responses:
         "200":
           description: Course
-
+  /api/courses/{id}/update:
     put:
       summary: Update course (Teacher/Admin)
       parameters:
@@ -523,7 +523,7 @@ paths:
       responses:
         "200":
           description: Updated
-
+  /api/courses/{id}/delete:
     delete:
       summary: Delete course (Teacher/Admin)
       parameters:
