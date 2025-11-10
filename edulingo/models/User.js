@@ -9,10 +9,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    name: {
-      type: String,
-      trim: true,
-    },
+
     email: {
       type: String,
       required: true,
@@ -24,9 +21,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    password_hash: {
-      type: String,
-    },
+
     role: {
       type: String,
       enum: ['admin', 'teacher', 'learner'],
@@ -47,7 +42,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// Tu dong hash password va cap nhat password_hash khi password thay doi
+// Tu dong hash password khi password thay doi
 userSchema.pre('save', async function (next) {
   // Neu password duoc thay doi va chua duoc hash
   if (this.isModified('password') && this.password) {
@@ -57,24 +52,21 @@ userSchema.pre('save', async function (next) {
         const salt = await bcrypt.genSalt(12);
         this.password = await bcrypt.hash(this.password, salt);
       }
-      // Dat password_hash bang password (da hash)
-      this.password_hash = this.password;
     } catch (error) {
       return next(error);
     }
-  } else if (!this.password_hash && this.password) {
-    // Neu chua co password_hash nhung co password, su dung password
-    this.password_hash = this.password;
   }
-  
+
   next();
 });
 
 // Ham tien ich so sanh mat khau plaintext va hash
 userSchema.methods.isPasswordMatch = function comparePassword(plainPassword) {
-  // So sanh voi password hoac password_hash
-  const passwordToCompare = this.password_hash || this.password;
-  return bcrypt.compare(plainPassword, passwordToCompare);
+  // So sanh voi password (da hash)
+  return bcrypt.compare(plainPassword, this.password);
 };
 
 module.exports = mongoose.model('User', userSchema);
+
+
+
