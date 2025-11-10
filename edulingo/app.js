@@ -9,12 +9,12 @@ const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const couponRoutes = require("./routes/couponRoutes");
-const quizRoutes = require('./routes/quizRoutes');
-const certificateRoutes = require('./routes/certificateRoutes');
+const quizRoutes = require("./routes/quizRoutes");
+const certificateRoutes = require("./routes/certificateRoutes");
 const courseRoutes = require("./routes/courseRoutes");
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
-const path = require('path');
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const path = require("path");
 
 const app = express();
 
@@ -36,24 +36,25 @@ mongoose
 
 // Dinh nghia cac route cho REST API
 
-app.use('/api/users', userRoutes);
-app.use('/api/auth', authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/coupons", couponRoutes);
-app.use('/api/quizzes', quizRoutes);
-app.use('/api/certificates', certificateRoutes);
+app.use("/api/quizzes", quizRoutes);
+app.use("/api/certificates", certificateRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/feedbacks", feedbackRoutes);
 
 // Serve Swagger UI
 try {
-  const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
-  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  const swaggerDocument = YAML.load(path.join(__dirname, "swagger.yaml"));
+  app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 } catch (err) {
-  console.error('Failed to load swagger.yaml for docs:', err.message);
+  console.error("Failed to load swagger.yaml for docs:", err.message);
 }
 
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 
+  console.log(`Swagger UI running on port http://localhost:${PORT}/api/docs`);
 });

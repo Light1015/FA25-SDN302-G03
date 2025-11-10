@@ -141,9 +141,8 @@ router.delete("/:id", authMiddleware, async (req, res) => {
       });
     }
 
-    // Soft delete by setting status to 'hidden'
-    feedback.status = "hidden";
-    await feedback.save();
+    // Hard delete the feedback
+    await Feedback.findByIdAndDelete(id);
 
     res.json({
       message: "Feedback deleted successfully",
